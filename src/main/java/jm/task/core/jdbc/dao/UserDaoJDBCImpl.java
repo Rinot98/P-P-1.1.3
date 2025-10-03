@@ -16,9 +16,9 @@ import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserDaoJDBCImpl.class);
+    private final Logger logger = LoggerFactory.getLogger(UserDaoJDBCImpl.class);
 
-    private static final String TABLE_CREATE_SQL = "CREATE TABLE users (" +
+    private final String T_CREATE = "CREATE TABLE users (" +
             "id BIGINT AUTO_INCREMENT PRIMARY KEY, " +
             "name VARCHAR(255) NOT NULL, " +
             "lastName VARCHAR(255) NOT NULL, " +
@@ -26,23 +26,26 @@ public class UserDaoJDBCImpl implements UserDao {
             ");";
 
 
-    private static final String USER_CREATE_SQL = "INSERT INTO users (name, lastName, age) VALUES (?, ?, ?)";
+    private final String U_CREATE = "INSERT INTO users (name, lastName, age) VALUES (?, ?, ?)";
 
-    private static final String TABLE_DROP_SQL = "DROP TABLE users;";
+    private final String T_DROP = "DROP TABLE users;";
 
-    private static final String USER_REMOVE_SQL = "DELETE FROM users WHERE id = ? ";
+    private final String U_REMOVE = "DELETE FROM users WHERE id = ? ";
 
-    private static final String TABLE_GET_ALL_SQL = "SELECT * FROM users;";
+    private final String T_ALL = "SELECT * FROM users;";
 
-    private static final String TABLE_CLEAN_SQL = "TRUNCATE TABLE users;";
+    private final String T_CLEAN = "TRUNCATE TABLE users;";
+
+    private final Connection connection;
 
     public UserDaoJDBCImpl() {
-
+           Util util = new Util();
+           this.connection = util.getConnection();
     }
 
     public void createUsersTable() {
-        try (Connection connection = Util.getConnection(); Statement statement = connection.createStatement()) {
-            statement.executeUpdate(TABLE_CREATE_SQL);
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate(T_CREATE);
             logger.info("Таблица 'users' успешно создана!");
         } catch (SQLException e) {
             logger.error("Ошибка при создании таблицы 'users': {}", e.getMessage(), e);
@@ -50,8 +53,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void dropUsersTable() {
-        try (Connection connection = Util.getConnection(); Statement statement = connection.createStatement()) {
-            statement.executeUpdate(TABLE_DROP_SQL);
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate(T_DROP);
             logger.info("Таблица 'users' успешно удалена!");
         } catch (SQLException e) {
             logger.error("Ошибка при удалении таблица 'users': {}", e.getMessage(), e);
@@ -59,8 +62,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        try (Connection connection = Util.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(USER_CREATE_SQL)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(U_CREATE)) {
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, lastName);
             preparedStatement.setByte(3, age);
@@ -72,15 +74,10 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void removeUserById(long id) {
-        try (Connection connection = Util.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(USER_REMOVE_SQL)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(U_REMOVE)) {
             preparedStatement.setLong(1, id);
             int effect = preparedStatement.executeUpdate();
-            if (effect > 0) {
                 logger.info("Пользователь с id {} успешно удалён!", id);
-            } else {
-                logger.warn("Пользователь с id {} не найден :'( !", id);
-            }
         } catch (SQLException e) {
             logger.error("Ошибка при удалении пользователя с id = {}: {}", id, e.getMessage(), e);
         }
@@ -88,17 +85,12 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
-        try (Connection connection = Util.getConnection();
-             Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery(TABLE_GET_ALL_SQL)) {
+        try (Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(T_ALL)) {
             while (resultSet.next()) {
-                Long userId = resultSet.getLong(1);
-                String userName = resultSet.getString(2);
-                String userLastName = resultSet.getString(3);
-                Byte userAge = resultSet.getByte(4);
-
-                User user = new User(userName, userLastName, userAge);
-                user.setId(userId);
+                User user = new User(resultSet.getString(2),resultSet.getString(3),
+                        resultSet.getByte(4));
+                user.setId(resultSet.getLong(1));
                 users.add(user);
             }
             if (!users.isEmpty()) {
@@ -114,8 +106,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void cleanUsersTable() {
-        try (Connection connection = Util.getConnection(); Statement statement = connection.createStatement()) {
-            statement.executeUpdate(TABLE_CLEAN_SQL);
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate(T_CLEAN);
             logger.info("Все записи в таблице 'users' успешно удалены!");
         } catch (SQLException e) {
             logger.error("Ошибка при удалении записей таблицы 'users': {}", e.getMessage(), e);

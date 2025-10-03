@@ -153,3 +153,336 @@ java.sql.SQLSyntaxErrorException: Unknown table 'mydatabase.users'
 15:37:26.860 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
 15:37:26.921 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Все записи в таблице 'users' успешно удалены!
 15:37:26.939 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Данные получить не удалось, данная БД пуста, пользователей 0
+16:10:22.675 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+16:10:22.751 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+16:10:22.792 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+16:10:22.858 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Удалось получить 1 пользователей из БД.
+16:10:22.903 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+16:10:22.947 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+16:10:22.980 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+16:10:23.006 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь с id 1 успешно удалён!
+16:10:23.073 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+16:10:23.132 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+16:10:23.161 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+16:10:23.178 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Удалось получить 1 пользователей из БД.
+16:10:23.208 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+16:10:23.785 [main] ERROR j.task.core.jdbc.dao.UserDaoJDBCImpl - Ошибка при удалении таблица 'users': Unknown table 'mydatabase.users'
+java.sql.SQLSyntaxErrorException: Unknown table 'mydatabase.users'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at jm.task.core.jdbc.dao.UserDaoJDBCImpl.dropUsersTable(UserDaoJDBCImpl.java:54)
+	at jm.task.core.jdbc.service.UserServiceImpl.dropUsersTable(UserServiceImpl.java:17)
+	at UserServiceTest.dropUsersTable(UserServiceTest.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+16:10:23.815 [main] ERROR j.task.core.jdbc.dao.UserDaoJDBCImpl - Ошибка при удалении таблица 'users': Unknown table 'mydatabase.users'
+java.sql.SQLSyntaxErrorException: Unknown table 'mydatabase.users'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at jm.task.core.jdbc.dao.UserDaoJDBCImpl.dropUsersTable(UserDaoJDBCImpl.java:54)
+	at jm.task.core.jdbc.service.UserServiceImpl.dropUsersTable(UserServiceImpl.java:17)
+	at UserServiceTest.createUsersTable(UserServiceTest.java:30)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+16:10:23.859 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+16:10:23.893 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+16:10:23.935 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+16:10:23.955 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+16:10:24.011 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Все записи в таблице 'users' успешно удалены!
+16:10:24.027 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Данные получить не удалось, данная БД пуста, пользователей 0
+19:24:40.951 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Все записи в таблице 'users' успешно удалены!
+19:25:07.417 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+19:25:27.784 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+19:25:27.803 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name1 LastName1 успешно создан!
+19:25:27.811 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name2 LastName2 успешно создан!
+19:25:27.818 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name3 LastName3 успешно создан!
+19:25:27.824 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name4 LastName4 успешно создан!
+19:25:27.830 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь с id 1 успешно удалён!
+19:25:27.875 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Удалось получить 3 пользователей из БД.
+19:25:27.920 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Все записи в таблице 'users' успешно удалены!
+19:25:27.922 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Данные получить не удалось, данная БД пуста, пользователей 0
+19:25:27.938 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+19:29:53.038 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+19:29:53.055 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name1 LastName1 успешно создан!
+19:29:53.062 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name2 LastName2 успешно создан!
+19:29:53.068 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name3 LastName3 успешно создан!
+19:29:53.072 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name4 LastName4 успешно создан!
+19:29:53.077 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь с id 1 успешно удалён!
+19:29:53.123 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Удалось получить 3 пользователей из БД.
+19:29:53.168 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Все записи в таблице 'users' успешно удалены!
+19:29:53.170 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Данные получить не удалось, данная БД пуста, пользователей 0
+19:29:53.191 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+19:50:52.308 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+19:50:52.332 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name1 LastName1 успешно создан!
+19:50:52.339 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name2 LastName2 успешно создан!
+19:50:52.345 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name3 LastName3 успешно создан!
+19:50:52.350 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Name4 LastName4 успешно создан!
+19:50:52.356 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь с id 1 успешно удалён!
+19:50:52.403 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Удалось получить 3 пользователей из БД.
+19:50:52.444 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Все записи в таблице 'users' успешно удалены!
+19:50:52.446 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Данные получить не удалось, данная БД пуста, пользователей 0
+19:50:52.464 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+19:51:04.649 [main] ERROR j.task.core.jdbc.dao.UserDaoJDBCImpl - Ошибка при удалении таблица 'users': Unknown table 'mydatabase.users'
+java.sql.SQLSyntaxErrorException: Unknown table 'mydatabase.users'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at jm.task.core.jdbc.dao.UserDaoJDBCImpl.dropUsersTable(UserDaoJDBCImpl.java:61)
+	at jm.task.core.jdbc.service.UserServiceImpl.dropUsersTable(UserServiceImpl.java:21)
+	at UserServiceTest.saveUser(UserServiceTest.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+19:51:04.680 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+19:51:04.696 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+19:51:04.728 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Удалось получить 1 пользователей из БД.
+19:51:04.779 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+19:51:04.807 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+19:51:04.812 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+19:51:04.817 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь с id 1 успешно удалён!
+19:51:04.852 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+19:51:04.888 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+19:51:04.893 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+19:51:04.894 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Удалось получить 1 пользователей из БД.
+19:51:04.926 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+19:51:04.928 [main] ERROR j.task.core.jdbc.dao.UserDaoJDBCImpl - Ошибка при удалении таблица 'users': Unknown table 'mydatabase.users'
+java.sql.SQLSyntaxErrorException: Unknown table 'mydatabase.users'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at jm.task.core.jdbc.dao.UserDaoJDBCImpl.dropUsersTable(UserDaoJDBCImpl.java:61)
+	at jm.task.core.jdbc.service.UserServiceImpl.dropUsersTable(UserServiceImpl.java:21)
+	at UserServiceTest.dropUsersTable(UserServiceTest.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+19:51:04.955 [main] ERROR j.task.core.jdbc.dao.UserDaoJDBCImpl - Ошибка при удалении таблица 'users': Unknown table 'mydatabase.users'
+java.sql.SQLSyntaxErrorException: Unknown table 'mydatabase.users'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at jm.task.core.jdbc.dao.UserDaoJDBCImpl.dropUsersTable(UserDaoJDBCImpl.java:61)
+	at jm.task.core.jdbc.service.UserServiceImpl.dropUsersTable(UserServiceImpl.java:21)
+	at UserServiceTest.createUsersTable(UserServiceTest.java:30)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+19:51:04.990 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+19:51:05.028 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+19:51:05.057 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+19:51:05.064 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+19:51:05.100 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Все записи в таблице 'users' успешно удалены!
+19:51:05.104 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Данные получить не удалось, данная БД пуста, пользователей 0
+20:05:27.218 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+20:05:27.252 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+20:05:27.268 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+20:05:27.307 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Удалось получить 1 пользователей из БД.
+20:05:27.359 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+20:05:27.387 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+20:05:27.392 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+20:05:27.396 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь с id 1 успешно удалён!
+20:05:27.429 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+20:05:27.457 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+20:05:27.463 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+20:05:27.464 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Удалось получить 1 пользователей из БД.
+20:05:27.503 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+20:05:28.084 [main] ERROR j.task.core.jdbc.dao.UserDaoJDBCImpl - Ошибка при удалении таблица 'users': Unknown table 'mydatabase.users'
+java.sql.SQLSyntaxErrorException: Unknown table 'mydatabase.users'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at jm.task.core.jdbc.dao.UserDaoJDBCImpl.dropUsersTable(UserDaoJDBCImpl.java:57)
+	at jm.task.core.jdbc.service.UserServiceImpl.dropUsersTable(UserServiceImpl.java:22)
+	at UserServiceTest.dropUsersTable(UserServiceTest.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+20:05:28.111 [main] ERROR j.task.core.jdbc.dao.UserDaoJDBCImpl - Ошибка при удалении таблица 'users': Unknown table 'mydatabase.users'
+java.sql.SQLSyntaxErrorException: Unknown table 'mydatabase.users'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1499)
+	at com.mysql.cj.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2321)
+	at com.mysql.cj.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1369)
+	at jm.task.core.jdbc.dao.UserDaoJDBCImpl.dropUsersTable(UserDaoJDBCImpl.java:57)
+	at jm.task.core.jdbc.service.UserServiceImpl.dropUsersTable(UserServiceImpl.java:22)
+	at UserServiceTest.createUsersTable(UserServiceTest.java:30)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+20:05:28.141 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+20:05:28.181 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно удалена!
+20:05:28.213 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Таблица 'users' успешно создана!
+20:05:28.218 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Пользователь Ivan Ivanov успешно создан!
+20:05:28.262 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Все записи в таблице 'users' успешно удалены!
+20:05:28.267 [main] INFO  j.task.core.jdbc.dao.UserDaoJDBCImpl - Данные получить не удалось, данная БД пуста, пользователей 0
