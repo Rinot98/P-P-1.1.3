@@ -14,11 +14,7 @@ public class Util {
     private final static String PASSWORD = "root";
 
     private Connection connection;
-    Logger logger = LoggerFactory.getLogger(Util.class);
-
-    public Util() {
-
-    }
+    private final static Logger logger = LoggerFactory.getLogger(Util.class);
 
     public Connection getConnection()  {
         try {

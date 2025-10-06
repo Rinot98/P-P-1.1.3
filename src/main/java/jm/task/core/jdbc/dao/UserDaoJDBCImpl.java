@@ -36,12 +36,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     private final String T_CLEAN = "TRUNCATE TABLE users;";
 
-    private final Connection connection;
-
-    public UserDaoJDBCImpl() {
-           Util util = new Util();
-           this.connection = util.getConnection();
-    }
+    private final Connection connection = new Util().getConnection();
 
     public void createUsersTable() {
         try (Statement statement = connection.createStatement()) {
@@ -76,7 +71,6 @@ public class UserDaoJDBCImpl implements UserDao {
     public void removeUserById(long id) {
         try (PreparedStatement preparedStatement = connection.prepareStatement(U_REMOVE)) {
             preparedStatement.setLong(1, id);
-            int effect = preparedStatement.executeUpdate();
                 logger.info("Пользователь с id {} успешно удалён!", id);
         } catch (SQLException e) {
             logger.error("Ошибка при удалении пользователя с id = {}: {}", id, e.getMessage(), e);
@@ -88,15 +82,11 @@ public class UserDaoJDBCImpl implements UserDao {
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(T_ALL)) {
             while (resultSet.next()) {
-                User user = new User(resultSet.getString(2),resultSet.getString(3),
-                        resultSet.getByte(4));
-                user.setId(resultSet.getLong(1));
+                User user = new User(resultSet.getString("name"),
+                                     resultSet.getString("lastName"),
+                                     resultSet.getByte("age"));
+                user.setId(resultSet.getLong("id"));
                 users.add(user);
-            }
-            if (!users.isEmpty()) {
-                logger.info("Удалось получить {} пользователей из БД.", users.size());
-            } else {
-                logger.info("Данные получить не удалось, данная БД пуста, пользователей 0");
             }
         } catch (SQLException e) {
             logger.error("Ошибка при получении пользователей из БД! : {}", e.getMessage(), e);
@@ -104,6 +94,7 @@ public class UserDaoJDBCImpl implements UserDao {
         users.forEach(System.out::println);
         return users;
     }
+
 
     public void cleanUsersTable() {
         try (Statement statement = connection.createStatement()) {
