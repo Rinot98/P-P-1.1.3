@@ -16,7 +16,7 @@ public class Util {
     private Connection connection;
     private final static Logger logger = LoggerFactory.getLogger(Util.class);
 
-    public Connection getConnection()  {
+    public Connection getConnection() {
         try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {

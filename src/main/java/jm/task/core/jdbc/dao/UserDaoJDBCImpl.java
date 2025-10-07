@@ -18,7 +18,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     private final Logger logger = LoggerFactory.getLogger(UserDaoJDBCImpl.class);
 
-    private final String T_CREATE = "CREATE TABLE users (" +
+    private final static String T_CREATE = "CREATE TABLE users (" +
             "id BIGINT AUTO_INCREMENT PRIMARY KEY, " +
             "name VARCHAR(255) NOT NULL, " +
             "lastName VARCHAR(255) NOT NULL, " +
@@ -26,15 +26,15 @@ public class UserDaoJDBCImpl implements UserDao {
             ");";
 
 
-    private final String U_CREATE = "INSERT INTO users (name, lastName, age) VALUES (?, ?, ?)";
+    private final static String U_CREATE = "INSERT INTO users (name, lastName, age) VALUES (?, ?, ?)";
 
-    private final String T_DROP = "DROP TABLE users;";
+    private final static String T_DROP = "DROP TABLE users;";
 
-    private final String U_REMOVE = "DELETE FROM users WHERE id = ? ";
+    private final static String U_REMOVE = "DELETE FROM users WHERE id = ? ";
 
-    private final String T_ALL = "SELECT * FROM users;";
+    private final static String T_ALL = "SELECT * FROM users;";
 
-    private final String T_CLEAN = "TRUNCATE TABLE users;";
+    private final static String T_CLEAN = "TRUNCATE TABLE users;";
 
     private final Connection connection = new Util().getConnection();
 
@@ -79,15 +79,15 @@ public class UserDaoJDBCImpl implements UserDao {
              ResultSet resultSet = statement.executeQuery(T_ALL)) {
             while (resultSet.next()) {
                 User user = new User(resultSet.getString("name"),
-                                     resultSet.getString("lastName"),
-                                     resultSet.getByte("age"));
+                        resultSet.getString("lastName"),
+                        resultSet.getByte("age"));
                 user.setId(resultSet.getLong("id"));
                 users.add(user);
             }
         } catch (SQLException e) {
             logger.error("Ошибка при получении пользователей из БД! : {}", e.getMessage(), e);
         }
-        users.forEach(System.out::println);
+
         return users;
     }
 
